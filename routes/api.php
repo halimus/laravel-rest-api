@@ -21,12 +21,15 @@ $api = app('Dingo\Api\Routing\Router');
 
 $api->version('v1', function ($api) {
     
-//    $api->get('users', function(){
-//         return 'Hi Api v1';
-//    });
+    $api->get('/', function () {
+        return view('api');
+    });
     
     $api->get('users', 'App\Http\Controllers\Api\UsersController@index');
+    $api->get('users/{id}', 'App\Http\Controllers\Api\UsersController@show');
     
+    
+
     
 });
 

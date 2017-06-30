@@ -43,6 +43,19 @@ $app->singleton(
 
 /*
 |--------------------------------------------------------------------------
+| Custom new Serializer.
+|--------------------------------------------------------------------------
+|
+*/
+
+//$app['Dingo\Api\Transformer\Factory']->setAdapter(function ($app) {
+//    $fractal = new League\Fractal\Manager;
+//    $fractal->setSerializer(new App\Serializers\NoDataArraySerializer);
+//    return new Dingo\Api\Transformer\Adapter\Fractal($fractal);
+//});
+
+/*
+|--------------------------------------------------------------------------
 | Return The Application
 |--------------------------------------------------------------------------
 |

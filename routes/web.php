@@ -12,9 +12,6 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('foo', function () {
-    return 'Hello Halim';
+    //return view('welcome');
+    return redirect('api');
 });
