@@ -1,2 +1,2 @@
-# laravel-rest-api
-Laravel 5 REST API
+# Laravel 5 REST API
+
