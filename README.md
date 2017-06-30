@@ -15,7 +15,7 @@ Very sophisticated REST API using Laravel 5.4, you can find all what you need in
 
 
 #### You can find demo here : 
-https://demo.halimlardjane.com/ci-rest
+https://demo.halimlardjane.com/laravel-rest
 
 
 
