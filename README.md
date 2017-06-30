@@ -11,10 +11,12 @@ Very sophisticated REST API using Laravel 5.4, you can find all what you need in
 - How to use Laravel Transformer to customise the response data.
 
 
+
 ##### The project is still under developement, you may find an update if you back later.
 
 
-#### You can find demo here : 
+
+#### You can find ademo here : 
 https://demo.halimlardjane.com/laravel-rest
 
 
