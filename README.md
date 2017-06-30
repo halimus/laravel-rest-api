@@ -20,4 +20,4 @@ Very sophisticated REST API using [Laravel 5.4](https://laravel.com). You can fi
 https://demo.halimlardjane.com/laravel-rest
 
 
-### Installation Step bt Step:
+### Installation Step by Step:
