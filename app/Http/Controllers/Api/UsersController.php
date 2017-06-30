@@ -19,8 +19,6 @@ class UsersController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() { 
-        //http://beritacoding.blogspot.com/2015/11/fractal-output-complex-flexible.html
-       
         //$users = Users::all();
         //$users = Users::where('status', '<>', 'deleted')->get();
         //$users = Users::paginate(20);
