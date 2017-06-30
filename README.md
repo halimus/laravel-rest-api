@@ -1,6 +1,6 @@
 # Laravel 5 REST API
 
-very sophisticated REST API using Laravel 5.4, you can find all what you need in this example to create an API for dream.
+Very sophisticated REST API using Laravel 5.4, you can find all what you need in this example to create an API for dream.
 
 - We use in this Example :
 
@@ -10,9 +10,10 @@ very sophisticated REST API using Laravel 5.4, you can find all what you need in
 
 - How to use Laravel Transformer to customise the response data.
 
-The project is still under developement, you may find an update if you back later.
+## The project is still under developement, you may find an update if you back later.
 
-You can find demo here :
+## You can find demo here : 
+https://demo.halimlardjane.com/ci-rest
 
 
 
