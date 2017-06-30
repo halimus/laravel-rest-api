@@ -45,6 +45,27 @@ class UsersController extends Controller {
     public function create() {
         //
     }
+    
+    
+    /**
+     * 
+     * @param type $data
+     * @return type
+     */
+    private function validator($data){
+        return Validator::make($data, [
+            'first_name' => 'required|max:10',
+            'last_name' => 'required|max:10',
+            'email' => 'required|unique:users',
+            'password' => 'required|min:4',
+            'role' => 'required',
+            //'status' => 'required',
+            'status' => [
+                'required',
+                Rule::in(['active', 'inactive']),
+            ],
+        ]);
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -53,7 +74,19 @@ class UsersController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
-        //
+        
+        $input = $request->all();
+        $validator = $this->validator($input);
+        if ($validator->fails()) {
+            //return $this->response->error($validator->errors(), 400);
+            //return $this->response->errorInternal($validator->errors());
+            return $this->response->errorBadRequest($validator->errors());
+        }
+        
+        $input['password'] = bcrypt($request['password']);
+        die('pass');
+        
+        
     }
 
     /**

@@ -25,8 +25,17 @@ $api->version('v1', function ($api) {
         return view('api');
     });
     
+    /**
+     * Users routes
+     */
     $api->get('users', 'App\Http\Controllers\Api\UsersController@index');
     $api->get('users/{id}', 'App\Http\Controllers\Api\UsersController@show');
+    
+    $api->post('users/create', 'App\Http\Controllers\Api\UsersController@store');
+    $api->put('users/{id}', 'App\Http\Controllers\Api\UsersController@update'); 
+    $api->delete('users/{id}', 'App\Http\Controllers\Api\UsersController@destroy'); 
+    
+    
     
     
 
