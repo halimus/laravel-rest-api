@@ -19,9 +19,10 @@ class CreateBookTable extends Migration
             $table->text('description')->nullable();
             $table->string('language_code', 2)->unique();
             $table->smallInteger('pages')->unsigned();
-            $table->timestamps();
             //$table->timestamp('published_at')->useCurrent();
             $table->date('published_at');
+            $table->timestamps();
+            
             $table->integer('language_id')->unsigned();
             $table->integer('author_id')->unsigned();
             

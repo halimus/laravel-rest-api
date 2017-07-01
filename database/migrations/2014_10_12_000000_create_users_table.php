@@ -18,8 +18,8 @@ class CreateUsersTable extends Migration
             $table->string('first_name', 25)->nullable(false);
             $table->string('last_name', 25)->nullable(false);
             $table->string('phone', 20)->nullable();
-            $table->string('email', 45)->unique();
-            $table->string('password');
+            $table->string('email', 45)->nullable(false)->unique();
+            $table->string('password')->nullable(false);
             //$table->string('ip_address', 45)->nullable();
             $table->ipAddress('ip_address')->nullable();
             $table->enum('role', ['administrator', 'colaborator']);
