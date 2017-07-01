@@ -44,53 +44,6 @@ class UsersController extends Controller {
     }
 
     /**
-     * 
-     * @param type $data
-     * @return type
-     */
-    private function validator_create($data){
-        return Validator::make($data, [
-            'first_name' => 'required|max:10',
-            'last_name' => 'required|max:10',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|min:4',
-            'role' => 'required|in:administrator,colaborator',
-            'status' => 'required|in:active,inactive'
-        ]);
-    }
-    
-    /**
-     * 
-     * @param type $data
-     * @return type
-     */
-    private function validator_update($data, $user_id){
-        $rules = array();
-        if (array_key_exists('first_name', $data)){
-            $rules['first_name'] = 'required|max:10';
-        }
-        if (array_key_exists('last_name', $data)){
-            $rules['last_name'] = 'required|max:10';
-        }
-        if (array_key_exists('email', $data)){
-            $rules['email'] = 'required|email|max:45|unique:users,email, ' . $user_id . ',user_id';
-        }
-        if (array_key_exists('password', $data)){
-            $rules['password'] = 'required|min:4';
-        }
-        if (array_key_exists('role', $data)){
-            $rules['role'] = 'required|in:administrator,colaborator';
-        }
-        if (array_key_exists('status', $data)){
-            $rules['status'] = 'required|in:active,inactive';
-        }
-        
-        return Validator::make($data,
-            $rules
-        );    
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -210,6 +163,53 @@ class UsersController extends Controller {
            //return $this->response->error('could_not_delete_user', 500); 
            return $this->response->errorInternal('could_not_delete_user');
         }
+    }
+    
+    /**
+     * 
+     * @param type $data
+     * @return type
+     */
+    private function validator_create($data){
+        return Validator::make($data, [
+            'first_name' => 'required|max:10',
+            'last_name' => 'required|max:10',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:4',
+            'role' => 'required|in:administrator,colaborator',
+            'status' => 'required|in:active,inactive'
+        ]);
+    }
+    
+    /**
+     * 
+     * @param type $data
+     * @return type
+     */
+    private function validator_update($data, $user_id){
+        $rules = array();
+        if (array_key_exists('first_name', $data)){
+            $rules['first_name'] = 'required|max:10';
+        }
+        if (array_key_exists('last_name', $data)){
+            $rules['last_name'] = 'required|max:10';
+        }
+        if (array_key_exists('email', $data)){
+            $rules['email'] = 'required|email|max:45|unique:users,email, ' . $user_id . ',user_id';
+        }
+        if (array_key_exists('password', $data)){
+            $rules['password'] = 'required|min:4';
+        }
+        if (array_key_exists('role', $data)){
+            $rules['role'] = 'required|in:administrator,colaborator';
+        }
+        if (array_key_exists('status', $data)){
+            $rules['status'] = 'required|in:active,inactive';
+        }
+        
+        return Validator::make($data,
+            $rules
+        );    
     }
 
 }
