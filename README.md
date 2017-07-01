@@ -1,6 +1,6 @@
 # A modern REST API in Laravel 5
 
-Very sophisticated REST API using [Laravel 5.4](https://laravel.com). You can find all what you need in this example to create an API for dream.
+Very sophisticated REST API using [Laravel 5.4](https://laravel.com). You can find all what you need in this example to create an API of your dream.
 
 #### We use in this Example :
 
