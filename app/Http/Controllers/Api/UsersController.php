@@ -44,16 +44,6 @@ class UsersController extends Controller {
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create() {
-        //
-    }
-    
-    
-    /**
      * 
      * @param type $data
      * @return type
@@ -90,6 +80,7 @@ class UsersController extends Controller {
         
         $input['password'] = bcrypt($request['password']);
         $input['ip_address'] = $request->ip();
+        //die($input['ip_address']);
         //$input['created_at'] = date('Y-m-d H:i:s');
         //$input['created_at'] = \Carbon\Carbon::now();
         $input['created_at'] =  \Carbon\Carbon::now()->format('Y-m-d H:i:s');
@@ -99,8 +90,7 @@ class UsersController extends Controller {
         }
         else{
             return $this->response->error('could_not_create_user', 500);
-        }
-            
+        }     
     }
 
     /**
@@ -110,7 +100,6 @@ class UsersController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function show($id) {
-        
         //$user = User::find($id);
         $user = Users::where('status', '<>', 'deleted')->find($id);
         
