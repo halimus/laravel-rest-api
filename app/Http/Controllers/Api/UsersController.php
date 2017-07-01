@@ -4,10 +4,16 @@ namespace App\Http\Controllers\api;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+
 use Dingo\Api\Routing\Helpers;
 use App\Transformer\UsersTransformer;
 USE Illuminate\Support\Facades\DB;
 use App\Models\Users;
+
+use Illuminate\Support\Facades\Validator;
+
+use Illuminate\Support\Facades\Response;
+
 
 class UsersController extends Controller {
 
@@ -58,12 +64,8 @@ class UsersController extends Controller {
             'last_name' => 'required|max:10',
             'email' => 'required|unique:users',
             'password' => 'required|min:4',
-            'role' => 'required',
-            //'status' => 'required',
-            'status' => [
-                'required',
-                Rule::in(['active', 'inactive']),
-            ],
+            'role' => 'required|in:administrator,colaborator',
+            'status' => 'required|in:active,inactive'
         ]);
     }
 
@@ -74,19 +76,31 @@ class UsersController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
-        
         $input = $request->all();
         $validator = $this->validator($input);
         if ($validator->fails()) {
-            //return $this->response->error($validator->errors(), 400);
-            //return $this->response->errorInternal($validator->errors());
-            return $this->response->errorBadRequest($validator->errors());
+            //return $this->response->error('Could not create new user.', 400);   // You can use this
+            //return $this->response->errorBadRequest(''Could not create new user.''); // or this
+            return Response::json(array(   // Better if use this with errors validation
+                'message'   =>  'Could not create new user.',
+                'errors'   =>  $validator->errors(),
+                'status_code'      =>  400
+            ), 400);
         }
         
         $input['password'] = bcrypt($request['password']);
-        die('pass');
-        
-        
+        $input['ip_address'] = $request->ip();
+        //$input['created_at'] = date('Y-m-d H:i:s');
+        //$input['created_at'] = \Carbon\Carbon::now();
+        $input['created_at'] =  \Carbon\Carbon::now()->format('Y-m-d H:i:s');
+
+        if(Users::create($input)){
+            return $this->response->created();
+        }
+        else{
+            return $this->response->error('could_not_create_user', 500);
+        }
+            
     }
 
     /**
