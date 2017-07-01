@@ -6,9 +6,10 @@ Very sophisticated REST API using [Laravel 5.4](https://laravel.com). You can fi
 
 - [Dingo API package](https://github.com/dingo/api/)
 
+- How to use [Laravel Transformer]( http://fractal.thephpleague.com/transformers/) to customise the response.
+
 - Authentication using [Laravel Passport](https://laravel.com/docs/5.4/passport)
 
-- How to use [Laravel Transformer]( http://fractal.thephpleague.com/transformers/) to customise the response.
 
 
 
