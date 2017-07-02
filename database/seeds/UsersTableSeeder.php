@@ -15,7 +15,7 @@ class UsersTableSeeder extends Seeder {
         //DB::table('users')->delete(); //delete all records
         App\Models\Users::truncate();
         
-        for ($i = 0; $i < 13; $i++) {
+        for ($i = 0; $i < 20; $i++) {
             
             $first_name = str_random(6);
             $last_name = str_random(6);
