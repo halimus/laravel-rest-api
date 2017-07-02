@@ -56,8 +56,23 @@ class BookController extends Controller {
             ), 400);
         }
         
+        //$input['created_at'] = date('Y-m-d H:i:s');
+        //$input['created_at'] = \Carbon\Carbon::now();
+        $input['created_at'] =  \Carbon\Carbon::now()->format('Y-m-d H:i:s');
         
+        $slug = str_slug($input['title'], '-');
+        $input['slug'] = $slug;
         
+        if(Book::create($input)){
+            return $this->response->created();
+            //return response()->setStatusCode(201, 'The resource is created successfully!');
+            //response()->json(['status' => 'The resource is created successfully'], 200);
+            //response('The resource is created successfully, 200);
+        }
+        else{
+            //return $this->response->error('could_not_create_book', 500); // you can use this
+            return $this->response->errorInternal('could_not_create_book'); // or this
+        } 
     }
 
     /**

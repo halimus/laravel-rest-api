@@ -62,7 +62,6 @@ class UsersController extends Controller {
         
         $input['password'] = bcrypt($request['password']);
         $input['ip_address'] = $request->ip();
-        //die($input['ip_address']);
         //$input['created_at'] = date('Y-m-d H:i:s');
         //$input['created_at'] = \Carbon\Carbon::now();
         $input['created_at'] =  \Carbon\Carbon::now()->format('Y-m-d H:i:s');
