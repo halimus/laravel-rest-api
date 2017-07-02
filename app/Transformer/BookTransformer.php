@@ -15,18 +15,20 @@ class BookTransformer extends Fractal\TransformerAbstract {
     public function transform(Book $book) {
         return [
             'id'    => (int) $book->book_id,
-            'title' => $author->title,
-            'description' => $author->description,
-            'ISBN' => $author->ISBN,
-            'pages' => $author->pages,
-            'published_at' => $author->published_at,
-            'language_id' => $author->language_id,
-            'author_id' => $author->author_id,
-//            'created_at' => $author->created_at,
-//            'updated_at' => $author->updated_at,
+            'title' => $book->title,
+            'description' => $book->description,
+            'ISBN' => $book->ISBN,
+            'pages' => $book->pages,
+            'published_at' => $book->published_at,
+            'language_id' => $book->language_id,
+            'author_id' => $book->author_id,
+//            'created_at' => $book->created_at,
+//            'updated_at' => $book->updated_at,
             'link' => [
                 [
-                    'uri' => url('api/book/'.$book->book_id)
+                    'uri' => url('api/book/'.$book->book_id),
+                    'language' => url('api/language/'.$book->language_id),
+                    'author' => url('api/author/'.$book->author_id)
                 ]
             ],
         ]; 

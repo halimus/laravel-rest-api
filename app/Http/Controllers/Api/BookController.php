@@ -44,6 +44,19 @@ class BookController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
+        $input = $request->all();
+        $validator = $this->validator_create($input);
+        if ($validator->fails()) {
+            //return $this->response->error('Could not create new book.', 400);   // You can use this
+            //return $this->response->errorBadRequest('Could not create new book.'); // or this
+            return Response::json(array(   // Better if use this with errors validation
+                'message'   =>  'Could not create new book.',
+                'errors'   =>  $validator->errors(),
+                'status_code'      =>  400
+            ), 400);
+        }
+        
+        
         
     }
 
@@ -61,7 +74,7 @@ class BookController extends Controller {
         }
         //return response()->json(['data' => $book]);  // Use this by default
         //return $this->response->array($book->toArray()); // Use this if you using Dingo Api Routing Helpers
-        return $this->response->item($author, new BookTransformer()); // Use this if you using Fractal 
+        return $this->response->item($book, new BookTransformer()); // Use this if you using Fractal 
     }
 
     /**
@@ -96,5 +109,49 @@ class BookController extends Controller {
            return $this->response->errorInternal('could_not_delete_book');
         } 
     }
+    
+    /**
+     * 
+     * @param type $data
+     * @return type
+     */
+    private function validator_create($data){
+        return Validator::make($data, [
+            'title' => 'required|min:2',
+            'pages' => 'numeric|min:2|max:3',
+            'published_at' => 'date|date_format:Y-m-d|before:tomorrow', // Accept today date
+            'language_id' => 'required|exists:languages,language_id',
+            'author_id' => 'required|exists:author,author_id'
+        ]);
+    }
 
+    /**
+     * 
+     * @param type $data
+     * @return type
+     */
+    private function validator_update($data, $language_id){
+        $rules = array();
+        if (array_key_exists('title', $data)){
+            $rules['title'] = 'required|min:2';
+        }
+        if (array_key_exists('pages', $data)){
+            $rules['pages'] = 'numeric|min:2|max:3';
+        }
+        if (array_key_exists('published_at', $data)){
+            $rules['published_at'] = 'date|date_format:Y-m-d|before:tomorrow';
+        }
+        if (array_key_exists('language_id', $data)){
+            $rules['language_id'] = 'required|exists:languages,language_id';
+        }
+        if (array_key_exists('author_id', $data)){
+            $rules['author_id'] = 'required|exists:author,author_id';
+        }
+        
+        return Validator::make($data,
+            $rules
+        );    
+    }
+    
+    
 }
