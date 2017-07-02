@@ -8,6 +8,7 @@ class Languages extends Model
 {
     protected $table = 'languages';
     protected $primaryKey = 'language_id';
+    public $timestamps = false;
 
     /**
      * The attributes that are mass assignable.

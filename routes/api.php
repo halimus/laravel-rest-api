@@ -34,8 +34,33 @@ $api->version('v1', function ($api) {
     $api->put('users/{id}', 'App\Http\Controllers\Api\UsersController@update');  
     $api->delete('users/{id}', 'App\Http\Controllers\Api\UsersController@destroy'); 
     
+    /**
+     * Languages routes
+     */
+    $api->get('language', 'App\Http\Controllers\Api\LanguagesController@index');
+    $api->get('language/{id}', 'App\Http\Controllers\Api\LanguagesController@show');
+    $api->post('language/create', 'App\Http\Controllers\Api\LanguagesController@store');
+    $api->put('language/{id}', 'App\Http\Controllers\Api\LanguagesController@update');  
+    $api->delete('language/{id}', 'App\Http\Controllers\Api\LanguagesController@destroy'); 
     
-
+    /**
+     * Author routes
+     */
+    $api->get('author', 'App\Http\Controllers\Api\AuthorController@index');
+    $api->get('author/{id}', 'App\Http\Controllers\Api\AuthorController@show');
+    $api->post('author/create', 'App\Http\Controllers\Api\AuthorController@store');
+    $api->put('author/{id}', 'App\Http\Controllers\Api\AuthorController@update');  
+    $api->delete('author/{id}', 'App\Http\Controllers\Api\AuthorController@destroy'); 
+    
+    /**
+     * Book routes
+     */
+    $api->get('book', 'App\Http\Controllers\Api\BookController@index');
+    $api->get('book/{id}', 'App\Http\Controllers\Api\BookController@show');
+    $api->post('book/create', 'App\Http\Controllers\Api\BookController@store');
+    $api->put('book/{id}', 'App\Http\Controllers\Api\BookController@update');  
+    $api->delete('book/{id}', 'App\Http\Controllers\Api\BookController@destroy'); 
+    
     
 });
 

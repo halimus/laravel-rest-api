@@ -4,15 +4,13 @@ namespace App\Http\Controllers\api;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
 use Dingo\Api\Routing\Helpers;
-use App\Transformer\UsersTransformer;
-
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Response;
 
-USE Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\DB;
 use App\Models\Users;
+use App\Transformer\UsersTransformer;
 
 
 class UsersController extends Controller {
@@ -31,9 +29,9 @@ class UsersController extends Controller {
         $users = Users::where('status', '<>', 'deleted')->paginate(10);
         
         if($users->count()){
-            //return response()->json(['results' => $users]); // Use this by default
+            //return response()->json(['data' => $users]); // Use this by default
             //return $this->response->array($users->toArray()); // Use this if you using Dingo Api Routing Helpers
-            //return $this->response->collection($users, new UsersTransformer()); // Use this if you using Fractal 
+            //return $this->response->collection($users, new UsersTransformer()); // Use this if you using Fractal <=> Create a resource collection transformer
            return $this->response->paginator($users, new UsersTransformer); // Use this if you using Fractal Responding With Paginated Items 
         }
         else{
@@ -95,7 +93,7 @@ class UsersController extends Controller {
             //return $this->response->error('Could not find the user', 404);  // Use this by default
             return $this->response->errorNotFound('Could not find the user'); // Use this if you you using Dingo Api Routing Helpers
         }
-        //return response()->json(['result' => $user]);  // Use this by default
+        //return response()->json(['data' => $user]);  // Use this by default
         //return $this->response->array($user->toArray()); // Use this if you using Dingo Api Routing Helpers
         return $this->response->item($user, new UsersTransformer()); // Use this if you using Fractal 
     }
@@ -138,8 +136,8 @@ class UsersController extends Controller {
             return $this->response->noContent(); // noContent -> HTTP Code 304
         }
         else{
-            //return $this->response->error('could_not_update_book', 500); // you can use this
-            return $this->response->errorInternal('could_not_update_book'); // or this
+            //return $this->response->error('could_not_update_user', 500); // you can use this
+            return $this->response->errorInternal('could_not_update_user'); // or this
         }
     }
 
