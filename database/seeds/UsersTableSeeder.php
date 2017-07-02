@@ -24,7 +24,7 @@ class UsersTableSeeder extends Seeder {
                 'first_name' => $first_name,
                 'last_name' => $last_name,
                 'phone' => mt_rand(200,999).'-'.mt_rand(100,999).'-'.mt_rand(1000,9999),
-                'email' => strtolower($first_name . '@gmail.com'),
+                'email' => strtolower($first_name . '@domain.com'),
                 'password' => bcrypt('1234'),
                 'ip_address' => mt_rand(0,255).'.'.mt_rand(0,255).'.'.mt_rand(0,255).'.'.mt_rand(0,255),
                 'role' => 'colaborator',
