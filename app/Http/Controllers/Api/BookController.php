@@ -64,11 +64,7 @@ class BookController extends Controller {
         //$slug = str_slug($input['title'], '-');
         //$input['slug'] = $slug;
         
-        
         if(Book::create($input)){
-            
-            
-            
             return $this->response->created();
             //return response()->setStatusCode(201, 'The resource is created successfully!');
             //response()->json(['status' => 'The resource is created successfully'], 200);
@@ -105,7 +101,34 @@ class BookController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id) {
+        $book = Book::find($id);
+        if (!$book) {
+            //return $this->response->error('Could not find the book', 404);
+            return $this->response->errorNotFound('Could not find the book');
+        }
         
+        $input = $request->all();
+        $validator = $this->validator_update($input);
+        if ($validator->fails()) {
+            //return $this->response->error('Could not update a book.', 400);   // You can use this
+            //return $this->response->errorBadRequest('Could not update a book.'); // or this
+            return Response::json(array(   // Better if use this with errors validation
+                'message'   =>  'Could not update a book.',
+                'errors'   =>  $validator->errors(),
+                'status_code'      =>  400
+            ), 400);
+        }
+        
+        $input['updated_at'] =  \Carbon\Carbon::now()->format('Y-m-d H:i:s');
+        
+        $book->fill($input);
+        if($book->save()){
+            return $this->response->noContent(); // noContent -> HTTP Code 304
+        }
+        else{
+            //return $this->response->error('could_not_update_book', 500); // you can use this
+            return $this->response->errorInternal('could_not_update_book'); // or this
+        }
     }
 
     /**
@@ -150,7 +173,7 @@ class BookController extends Controller {
      * @param type $data
      * @return type
      */
-    private function validator_update($data, $language_id){
+    private function validator_update($data){
         $rules = array();
         if (array_key_exists('title', $data)){
             $rules['title'] = 'required|min:2';
