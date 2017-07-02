@@ -17,7 +17,7 @@ class BookTableSeeder extends Seeder
         DB::table('book')->insert([
             [
                 'title' => 'PHP for the Web: Visual QuickStart Guide', 
-                'slug' => null, 
+                'slug' => 'php-for-the-web-visual-quickstart-guide', 
                 'description' => null, 
                 'ISBN' => '0134291255', 
                 'pages' => '528', 
@@ -28,7 +28,7 @@ class BookTableSeeder extends Seeder
             ],
             [ 
                 'title' => 'HTML and CSS: Visual QuickStart Guide', 
-                'slug' => null, 
+                'slug' => 'html-and-css-visual-quickstart-guide', 
                 'description' => null, 
                 'ISBN' => '0321928830', 
                 'pages' => '576', 
@@ -39,7 +39,7 @@ class BookTableSeeder extends Seeder
             ],
             [
                 'title' => 'Laravel and AngularJS', 
-                'slug' => null, 
+                'slug' => 'laravel-and-angularjs', 
                 'description' => null, 
                 'ISBN' => 'B01H0YVS18', 
                 'pages' => '314', 
@@ -50,7 +50,7 @@ class BookTableSeeder extends Seeder
             ],
             [ 
                 'title' => 'Restful Web API Design with Node.Js', 
-                'slug' => null, 
+                'slug' => 'restful-web-api-design-with-nodejs', 
                 'description' => null, 
                 'ISBN' => '1783985860', 
                 'pages' => '152', 
@@ -61,7 +61,7 @@ class BookTableSeeder extends Seeder
             ],
             [
                 'title' => 'Programmer en JavaScript', 
-                'slug' => null, 
+                'slug' => 'programmer-en-javascript', 
                 'description' => null, 
                 'ISBN' => '1507139721', 
                 'pages' => '45', 
@@ -72,7 +72,7 @@ class BookTableSeeder extends Seeder
             ],
             [ 
                 'title' => 'Démarrer Avec Android Studio', 
-                'slug' => null, 
+                'slug' => 'demarrer-avec-android-studio', 
                 'description' => null, 
                 'ISBN' => '1633395006', 
                 'pages' => '293', 
@@ -83,7 +83,7 @@ class BookTableSeeder extends Seeder
             ],
             [
                 'title' => 'Curso de Programación Java', 
-                'slug' => null, 
+                'slug' => 'curso-de-programacion-java', 
                 'description' => null, 
                 'ISBN' => '1507571178', 
                 'pages' => '508', 
@@ -105,7 +105,7 @@ class BookTableSeeder extends Seeder
             ],
             [
                 'title' => 'The Laravel Survival Guide', 
-                'slug' => null, 
+                'slug' => 'the-laravel-survival-guide', 
                 'description' => null, 
                 'ISBN' => '1783985860', 
                 'pages' => '119', 
@@ -127,7 +127,7 @@ class BookTableSeeder extends Seeder
             ],
             [ 
                 'title' => 'Learning React', 
-                'slug' => null, 
+                'slug' => 'learning-react', 
                 'description' => null, 
                 'ISBN' => 'B01N5GPFM2', 
                 'pages' => '240', 
@@ -138,7 +138,7 @@ class BookTableSeeder extends Seeder
             ],
             [
                 'title' => 'Typescript Jumpstart', 
-                'slug' => null, 
+                'slug' => 'typescript-jumpstart', 
                 'description' => null, 
                 'ISBN' => 'B072TQTBKG', 
                 'pages' => '270', 
