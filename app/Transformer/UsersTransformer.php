@@ -20,8 +20,9 @@ class UsersTransformer extends Fractal\TransformerAbstract {
             'phone' => $user->phone,
             'email' => $user->email,
             'role' => $user->role,
-            'created_at' => $author->created_at,
-            'updated_at' => $author->updated_at,
+            'status' => $user->status,
+            //'created_at' => $user->created_at,
+            //'updated_at' => $user->updated_at,
             'link' => [
                 [
                     'uri' => url('api/users/'.$user->user_id)

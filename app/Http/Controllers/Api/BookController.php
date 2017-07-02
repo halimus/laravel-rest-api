@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Book;
 use App\Transformer\BookTransformer;
 
+
 class BookController extends Controller {
 
     use Helpers;
@@ -60,10 +61,14 @@ class BookController extends Controller {
         //$input['created_at'] = \Carbon\Carbon::now();
         $input['created_at'] =  \Carbon\Carbon::now()->format('Y-m-d H:i:s');
         
-        $slug = str_slug($input['title'], '-');
-        $input['slug'] = $slug;
+        //$slug = str_slug($input['title'], '-');
+        //$input['slug'] = $slug;
+        
         
         if(Book::create($input)){
+            
+            
+            
             return $this->response->created();
             //return response()->setStatusCode(201, 'The resource is created successfully!');
             //response()->json(['status' => 'The resource is created successfully'], 200);
@@ -133,7 +138,7 @@ class BookController extends Controller {
     private function validator_create($data){
         return Validator::make($data, [
             'title' => 'required|min:2',
-            'pages' => 'numeric|min:2|max:3',
+            'pages' => 'required|numeric|min:10|max:999',
             'published_at' => 'date|date_format:Y-m-d|before:tomorrow', // Accept today date
             'language_id' => 'required|exists:languages,language_id',
             'author_id' => 'required|exists:author,author_id'
@@ -151,7 +156,7 @@ class BookController extends Controller {
             $rules['title'] = 'required|min:2';
         }
         if (array_key_exists('pages', $data)){
-            $rules['pages'] = 'numeric|min:2|max:3';
+            $rules['pages'] = 'required|numeric|min:10|max:999';
         }
         if (array_key_exists('published_at', $data)){
             $rules['published_at'] = 'date|date_format:Y-m-d|before:tomorrow';

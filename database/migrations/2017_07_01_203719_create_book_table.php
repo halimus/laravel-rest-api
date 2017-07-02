@@ -21,7 +21,7 @@ class CreateBookTable extends Migration
             $table->string('ISBN', 20)->nullable();
             $table->smallInteger('pages')->unsigned();
             //$table->timestamp('published_at')->useCurrent();
-            $table->date('published_at');
+            $table->date('published_at')->nullable();
             $table->timestamps();
             
             $table->integer('language_id')->unsigned();

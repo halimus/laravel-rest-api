@@ -28,3 +28,10 @@ https://demo.halimlardjane.com/laravel-rest
 
 ### Link
 
+to create unique slug :
+https://github.com/cviebrock/eloquent-sluggable
+
+
+
+
+

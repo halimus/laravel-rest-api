@@ -16,6 +16,7 @@ class BookTransformer extends Fractal\TransformerAbstract {
         return [
             'id'    => (int) $book->book_id,
             'title' => $book->title,
+            'slug' => $book->slug,
             'description' => $book->description,
             'ISBN' => $book->ISBN,
             'pages' => $book->pages,
