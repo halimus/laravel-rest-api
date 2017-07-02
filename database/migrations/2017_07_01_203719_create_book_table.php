@@ -17,7 +17,7 @@ class CreateBookTable extends Migration
             $table->increments('book_id');
             $table->string('title', 100)->nullable(false);
             $table->text('description')->nullable();
-            $table->string('language_code', 2)->unique();
+            $table->string('ISBN', 20)->nullable();
             $table->smallInteger('pages')->unsigned();
             //$table->timestamp('published_at')->useCurrent();
             $table->date('published_at');
