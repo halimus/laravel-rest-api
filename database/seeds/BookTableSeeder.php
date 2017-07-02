@@ -17,6 +17,7 @@ class BookTableSeeder extends Seeder
         DB::table('book')->insert([
             [
                 'title' => 'PHP for the Web: Visual QuickStart Guide', 
+                'slug' => null, 
                 'description' => null, 
                 'ISBN' => '0134291255', 
                 'pages' => '528', 
@@ -27,6 +28,7 @@ class BookTableSeeder extends Seeder
             ],
             [ 
                 'title' => 'HTML and CSS: Visual QuickStart Guide', 
+                'slug' => null, 
                 'description' => null, 
                 'ISBN' => '0321928830', 
                 'pages' => '576', 
@@ -37,6 +39,7 @@ class BookTableSeeder extends Seeder
             ],
             [
                 'title' => 'Laravel and AngularJS', 
+                'slug' => null, 
                 'description' => null, 
                 'ISBN' => 'B01H0YVS18', 
                 'pages' => '314', 
@@ -47,6 +50,7 @@ class BookTableSeeder extends Seeder
             ],
             [ 
                 'title' => 'Restful Web API Design with Node.Js', 
+                'slug' => null, 
                 'description' => null, 
                 'ISBN' => '1783985860', 
                 'pages' => '152', 
@@ -57,6 +61,7 @@ class BookTableSeeder extends Seeder
             ],
             [
                 'title' => 'Programmer en JavaScript', 
+                'slug' => null, 
                 'description' => null, 
                 'ISBN' => '1507139721', 
                 'pages' => '45', 
@@ -67,6 +72,7 @@ class BookTableSeeder extends Seeder
             ],
             [ 
                 'title' => 'Démarrer Avec Android Studio', 
+                'slug' => null, 
                 'description' => null, 
                 'ISBN' => '1633395006', 
                 'pages' => '293', 
@@ -77,6 +83,7 @@ class BookTableSeeder extends Seeder
             ],
             [
                 'title' => 'Curso de Programación Java', 
+                'slug' => null, 
                 'description' => null, 
                 'ISBN' => '1507571178', 
                 'pages' => '508', 
@@ -87,6 +94,7 @@ class BookTableSeeder extends Seeder
             ],
             [
                 'title' => 'كتاب الأذكياء', 
+                'slug' => null, 
                 'description' => null, 
                 'ISBN' => '9953881146', 
                 'pages' => '224', 
@@ -97,6 +105,7 @@ class BookTableSeeder extends Seeder
             ],
             [
                 'title' => 'The Laravel Survival Guide', 
+                'slug' => null, 
                 'description' => null, 
                 'ISBN' => '1783985860', 
                 'pages' => '119', 
@@ -107,6 +116,7 @@ class BookTableSeeder extends Seeder
             ],
             [
                 'title' => 'سلسلة إتقان لتعليم اللغة العربية كتاب الطالب', 
+                'slug' => null, 
                 'description' => null, 
                 'ISBN' => '9957553747', 
                 'pages' => '224', 
@@ -117,6 +127,7 @@ class BookTableSeeder extends Seeder
             ],
             [ 
                 'title' => 'Learning React', 
+                'slug' => null, 
                 'description' => null, 
                 'ISBN' => 'B01N5GPFM2', 
                 'pages' => '240', 
@@ -127,6 +138,7 @@ class BookTableSeeder extends Seeder
             ],
             [
                 'title' => 'Typescript Jumpstart', 
+                'slug' => null, 
                 'description' => null, 
                 'ISBN' => 'B072TQTBKG', 
                 'pages' => '270', 
