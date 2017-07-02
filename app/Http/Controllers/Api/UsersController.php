@@ -7,12 +7,12 @@ use App\Http\Controllers\Controller;
 
 use Dingo\Api\Routing\Helpers;
 use App\Transformer\UsersTransformer;
-USE Illuminate\Support\Facades\DB;
-use App\Models\Users;
 
 use Illuminate\Support\Facades\Validator;
-
 use Illuminate\Support\Facades\Response;
+
+USE Illuminate\Support\Facades\DB;
+use App\Models\Users;
 
 
 class UsersController extends Controller {
@@ -156,9 +156,14 @@ class UsersController extends Controller {
             //return $this->response->error('Could not find the user', 404);
             return $this->response->errorNotFound('Could not find the user');
         }
-        if($user->delete()){
-            return $this->response->noContent();
+        
+        $user->fill(['status' => 'deleted']);
+        if($user->save()){ // logical delete
+            return $this->response->noContent(); // noContent -> HTTP Code 304
         }
+//        if($user->delete()){ // physical delete
+//            return $this->response->noContent();
+//        }
         else{
            //return $this->response->error('could_not_delete_user', 500); 
            return $this->response->errorInternal('could_not_delete_user');
