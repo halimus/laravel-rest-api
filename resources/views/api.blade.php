@@ -48,14 +48,16 @@
                     
                     <h3><u>Author</u></h3>
                     <ol>
-                       <li><a href="{{ url('/api/author')}}">{{ url('/api/author')}}</a></li>
+                        <li><a href="{{ url('/api/author')}}">{{ url('/api/author')}}</a></li>
                         <li><a href="{{ url('/api/author/1')}}">{{ url('/api/author/1')}}</a></li>
+                        <li><a href="{{ url('/api/author/1/book')}}">{{ url('/api/author/1/book')}}</a> -> get All the Books for this Author.</li>
                     </ol>
                     
                     <h3><u>Languages</u></h3>
                     <ol>
                        <li><a href="{{ url('/api/language')}}">{{ url('/api/language')}}</a></li>
                        <li><a href="{{ url('/api/language/1')}}">{{ url('/api/language/1')}}</a></li>
+                       <li><a href="{{ url('/api/language/1/book')}}">{{ url('/api/language/1/book')}}</a> -> get All the Books for this Language.</li>
                     </ol>
                     
                     
@@ -68,8 +70,6 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.5/sweetalert2.min.js"></script>
        
-        
-        
         
         
     </body>
