@@ -21,7 +21,8 @@ class AuthorTransformer extends Fractal\TransformerAbstract {
 //            'updated_at' => $author->updated_at,
             'link' => [
                 [
-                    'uri' => url('api/author/'.$author->author_id)
+                    'uri' => url('api/author/'.$author->author_id),
+                    'book' => url('api/author/'.$author->author_id.'/book')
                 ]
             ],
         ]; 

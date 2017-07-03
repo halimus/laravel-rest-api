@@ -19,7 +19,8 @@ class LanguagesTransformer extends Fractal\TransformerAbstract {
             'language_code' => $language->language_code,
             'link' => [
                 [
-                    'uri' => url('api/language/'.$language->language_id)
+                    'uri' => url('api/language/'.$language->language_id),
+                    'book' => url('api/language/'.$language->language_id.'/book')
                 ]
             ],
         ]; 
