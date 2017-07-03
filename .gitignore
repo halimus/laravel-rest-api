@@ -10,7 +10,6 @@ Homestead.yaml
 npm-debug.log
 .env
 /nbproject/private/
-nbproject/private/
 nbproject/
 nbproject/project.xml
 nbproject/project.properties
