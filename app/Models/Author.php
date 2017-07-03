@@ -27,4 +27,14 @@ class Author extends Model
     protected $hidden = [
         
     ];
+    
+    
+    /**
+     * Get the books for the author.
+     */
+    public function books(){
+        //return $this->hasMany('App\Models\Book', 'foreign_key');
+        return $this->hasMany('App\Models\Book', 'author_id');
+    }
+    
 }

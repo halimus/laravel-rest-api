@@ -24,7 +24,7 @@ class AuthorController extends Controller {
     public function index() {
         //$author = Author::all();
         $author = Author::paginate(10);
-
+        
         if ($author->count()) {
             //return response()->json(['data' => $author]); // Use this by default
             //return $this->response->array($author->toArray()); // Use this if you using Dingo Api Routing Helpers
@@ -77,6 +77,11 @@ class AuthorController extends Controller {
      */
     public function show($id) {
         $author = Author::find($id);
+        
+        //$books = $author->books;
+        //return response()->json(['data' => $books]);
+        
+        
         if (!$author) {
             //return $this->response->error('Could not find the author', 404);  // Use this by default
             return $this->response->errorNotFound('Could not find the author'); // Use this if you you using Dingo Api Routing Helpers

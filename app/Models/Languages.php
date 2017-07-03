@@ -27,4 +27,12 @@ class Languages extends Model
     protected $hidden = [
         
     ];
+    
+    /**
+     * Get the books for the language.
+     */
+    public function books(){
+        return $this->hasMany('App\Models\Book', 'language_id');
+    }
+    
 }
