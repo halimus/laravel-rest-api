@@ -14,6 +14,7 @@ class CreateBookTable extends Migration
     public function up()
     {
         Schema::create('book', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->increments('book_id');
             $table->string('title', 100)->nullable(false);
             $table->string('slug', 100)->nullable();
@@ -34,7 +35,7 @@ class CreateBookTable extends Migration
             $table->foreign('author_id')
                   ->references('author_id')
                   ->on('author')
-                  ->onDelete('cascade'); 
+                  ->onDelete('cascade');
         });
     }
 

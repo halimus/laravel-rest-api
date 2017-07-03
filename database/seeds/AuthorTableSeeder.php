@@ -13,7 +13,9 @@ class AuthorTableSeeder extends Seeder
     {
         //DB::table('author')->delete(); //delete all records
         //App\Models\Book::truncate();
-        //App\Models\Author::truncate();
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+        App\Models\Author::truncate();
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
         
         for ($i = 1; $i < 20; $i++) {
             DB::table('author')->insert([

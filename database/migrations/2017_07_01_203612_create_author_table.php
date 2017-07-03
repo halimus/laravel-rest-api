@@ -13,6 +13,7 @@ class CreateAuthorTable extends Migration {
      */
     public function up() {
         Schema::create('author', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->increments('author_id');
             $table->string('first_name', 25);
             $table->string('last_name', 25);
