@@ -12,7 +12,7 @@ class BookTableSeeder extends Seeder
     public function run()
     {
         //DB::table('book')->delete(); //delete all records
-        App\Models\Book::truncate();
+        //App\Models\Book::truncate();
         
         DB::table('book')->insert([
             [

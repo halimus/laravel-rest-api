@@ -12,10 +12,12 @@ class AuthorTableSeeder extends Seeder
     public function run()
     {
         //DB::table('author')->delete(); //delete all records
-        App\Models\Author::truncate();
+        //App\Models\Book::truncate();
+        //App\Models\Author::truncate();
         
-        for ($i = 0; $i < 15; $i++) {
+        for ($i = 1; $i < 20; $i++) {
             DB::table('author')->insert([
+                'author_id' => $i,
                 'first_name' => str_random(6),
                 'last_name' => str_random(6),
                 //'created_at' => date('Y-m-d H:i:s')

@@ -12,7 +12,8 @@ class LanguagesTableSeeder extends Seeder
     public function run()
     {
         //DB::table('languages')->delete(); //delete all records
-        App\Models\Languages::truncate();
+        //App\Models\Book::truncate();
+        //App\Models\Languages::truncate();
         
         DB::table('languages')->insert([
             ['language_id' => 1, 'language_name' => 'English', 'language_code' => 'en'],
