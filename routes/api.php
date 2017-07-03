@@ -62,6 +62,13 @@ $api->version('v1', function ($api) {
     $api->delete('book/{id}', 'App\Http\Controllers\Api\BookController@destroy'); 
     
     
+    /**
+     * Author/Language has Books routes
+     */
+    $api->get('author/{id}/book', 'App\Http\Controllers\Api\AuthorBookController@index');
+    $api->get('language/{id}/book', 'App\Http\Controllers\Api\LanguageBookController@index');
+    
+    
 });
 
 

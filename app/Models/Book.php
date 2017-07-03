@@ -45,4 +45,20 @@ class Book extends Model
             ]
         ];
     }
+    
+    /**
+     * 
+     * @return type
+     */
+    public function author(){
+        return $this->belongsTo('App\Models\Author', 'author_id', 'author_id');
+    }
+    
+    /**
+     * 
+     * @return type
+     */
+    public function language(){
+        return $this->belongsTo('App\Models\Languages', 'language_id');
+    }
 }
