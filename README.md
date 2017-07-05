@@ -10,6 +10,8 @@ Very sophisticated REST API using [Laravel 5.4](https://laravel.com). You can fi
 
 - Authentication using [Laravel Passport](https://laravel.com/docs/5.4/passport)
 
+- [Eloquent-Sluggable](https://github.com/cviebrock/eloquent-sluggable)
+
 
 
 
