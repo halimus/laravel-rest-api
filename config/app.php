@@ -180,6 +180,8 @@ return [
         Dingo\Api\Provider\LaravelServiceProvider::class,
         
         Cviebrock\EloquentSluggable\ServiceProvider::class,
+        
+        L5Swagger\L5SwaggerServiceProvider::class,
 
     ],
 

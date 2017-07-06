@@ -25,6 +25,10 @@ $api->version('v1', function ($api) {
         return view('api');
     });
     
+    $api->get('/docs', function () {
+        return view('vendor.l5-swagger.index');
+    });
+    
     /**
      * Users routes
      */
