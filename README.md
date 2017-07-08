@@ -25,9 +25,13 @@ https://demo.halimlardjane.com/laravel-rest
 
 ### Installation Step by Step:
 
-1- Create a Database in Your MySQL (choose a name, for example: librarydb)
+1- After you pull up the project, browse to the folder with your terminal and run:  
 
-2- Create an new file .env in the base folder containing a copy of the file .env.example, and update the cresential of databases connexion
+    > composer install
+
+2- Create a Database in Your MySQL (choose a name, for example: librarydb)
+
+3- Create an new file .env in the base folder containing a copy of the file .env.example, and update the cresential of databases connexion
 
     DB_CONNECTION=mysql
     DB_HOST=127.0.0.1
@@ -42,6 +46,12 @@ Make sure also to out at API_PREFIX=api in your .env file Like this
     API_NAME="Laravel API"
     API_VERSION=v1
     API_DEBUG=false
+    
+    
+3- To migrate the database, In your Terminal run:
+
+    > php artisan migrate
+    
 
 
 
