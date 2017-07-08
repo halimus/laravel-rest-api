@@ -28,6 +28,12 @@ https://demo.halimlardjane.com/laravel-rest
 1- After you pull up the project, browse to the folder with your terminal and run:  
 
     > composer install
+    
+
+2- To generate Laravel key, in your Terminal run:
+
+    > php artisan key:generate
+    
 
 2- Create a Database in Your MySQL (choose a name, for example: librarydb)
 
@@ -48,10 +54,16 @@ Make sure also to out at API_PREFIX=api in your .env file Like this
     API_DEBUG=false
     
     
-3- To migrate the database, In your Terminal run:
+4- To migrate the database, In your Terminal run:
 
     > php artisan migrate
     
+    
+5- To fil the tables with some dummy data, In your Terminal run:
+ 
+    > php artisan db:seed
+    
+
 
 
 
