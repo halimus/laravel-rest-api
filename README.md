@@ -25,7 +25,8 @@ https://demo.halimlardjane.com/laravel-rest
 
 ### Installation Step by Step:
 
-1- ##### Step1: Create a Database in Your MySQL (choose a name, for example: librarydb)
+1- Create a Database in Your MySQL (choose a name, for example: librarydb)
+
 2- Create an new file .env in the base folder containing a copy of the file .env.example, and update the cresential of databases connexion
 
     DB_CONNECTION=mysql
