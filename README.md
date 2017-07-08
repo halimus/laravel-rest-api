@@ -67,6 +67,10 @@ Make sure also to out at API_PREFIX=api in your .env file Like this
 7- To run the server and test the API, In your Terminal run:
 
     > php artisan serve
+    
+    
+    
+![alt tag](https://github.com/halimus/laravel-rest-api/blob/master/public/images/composer.jpg)
 
 
 
