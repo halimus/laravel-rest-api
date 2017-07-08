@@ -35,9 +35,9 @@ https://demo.halimlardjane.com/laravel-rest
     > php artisan key:generate
     
 
-2- Create a Database in Your MySQL (choose a name, for example: librarydb)
+3- Create a Database in Your MySQL (choose a name, for example: librarydb)
 
-3- Create an new file .env in the base folder containing a copy of the file .env.example, and update the cresential of databases connexion
+4- Create an new file .env in the base folder containing a copy of the file .env.example, and update the cresential of databases connexion
 
     DB_CONNECTION=mysql
     DB_HOST=127.0.0.1
@@ -54,12 +54,12 @@ Make sure also to out at API_PREFIX=api in your .env file Like this
     API_DEBUG=false
     
     
-4- To migrate the database, In your Terminal run:
+5- To migrate the database, In your Terminal run:
 
     > php artisan migrate
     
     
-5- To fil the tables with some dummy data, In your Terminal run:
+6- To fill the tables with some dummy data, In your Terminal run:
  
     > php artisan db:seed
     
