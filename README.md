@@ -70,15 +70,10 @@ Make sure also to out at API_PREFIX=api in your .env file Like this
 
 
 
+8- Under construction...
 
 
 
-
-
-### Link
-
-to create unique slug :
-https://github.com/cviebrock/eloquent-sluggable
 
 
 
