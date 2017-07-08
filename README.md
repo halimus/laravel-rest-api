@@ -64,7 +64,9 @@ Make sure also to out at API_PREFIX=api in your .env file Like this
     > php artisan db:seed
     
 
+7- To run the server and test the API, In your Terminal run:
 
+    > php artisan serve
 
 
 
